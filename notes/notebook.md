@@ -213,3 +213,51 @@ There is multiple methods of computing the blur
 
 **cv2.medianBlur()**
 
+# Lesson 9 `Thresholding`
+
+**Thresholding**
+Proccess of converting image to binary image/
+in Thresholding image pixels devided by 0 and 1
+Whites - 1
+Black - 0
+------------------------------------------------
+    # So here is steps to do so:
+
+1) First we have to convert colorspace to GRAY
+    `cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)`
+
+2) Вызываем **cv2.threshold()**
+    В `cv2.threshold()` должно быть 4 аргумента
+    *(`new_grey_img, 80, 255, cv2.THRESH_BINARY`)*
+
+    Что за value `80` and `255` (x,y)?
+    Крч, как мы знаем у картинки пиксели
+    от 0 до 255 
+    
+    x - Первое значение `x` это пороговое значеие
+    все что будет меньше него станет белым 
+    y - Если значения пикселей больше или равно `x`
+    то будет `255` (255 пишем почти во всех случаях)
+
+3) Присваивем `ret`, `thres`
+   
+    `ret, thresh = cv2.threshold(`
+        `new_grey_img, 80, 255, cv2.THRESH_BINARY`
+    `)`
+
+4) Теперь дисплеим `thresh`
+    `cv2.imshow('Название окна', thresh)`
+
+Готово! Но это все был *global* thresholding
+который применяется по всем пикселям изображения
+-----------------------------------------------
+
+Теперь об *adaptive* thresholding
+
+Чтобы вызвать - **cv2.adaptiveThreshold**
+    Прикол в том что теперь нам не нужен `x` аргумент
+    но нужен край в 255
+
+
+**Thresholding** используется для сегментации изображений
+т.е чтобы выделить объект на фоне чего-то (пейзаж, рельеф и тд)
