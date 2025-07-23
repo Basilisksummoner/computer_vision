@@ -261,3 +261,25 @@ Black - 0
 
 **Thresholding** используется для сегментации изображений
 т.е чтобы выделить объект на фоне чего-то (пейзаж, рельеф и тд)
+
+# Lesson 10 `Edge detection`
+
+*There is 3 alghorithms for this*
+(Sobel, Laplace, Canny Edge)
+
+Easiset one is
+`Canny Edge`
+
+*The way to use canny edge detector is very strayforward*
+
+**cv2.Canny()**
+
+`img_edge = cv2.Canny(img, x, y)`
+`img` -  Исходное изображение
+`x` - Крч вот это min значение
+`y` - вот это max
+
+*Примечание!*
+Если `x` и `y` поставить на большие значения (например 200 на 500), то выделение будет менее скурпулезным, выделятся будут только края внешних осей
+Чем больше разница между `x` и `y`, тем менее детализированнее будет выделение
+
