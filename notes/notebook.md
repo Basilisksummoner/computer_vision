@@ -283,3 +283,28 @@ Easiset one is
 Если `x` и `y` поставить на большие значения (например 200 на 500), то выделение будет менее скурпулезным, выделятся будут только края внешних осей
 Чем больше разница между `x` и `y`, тем менее детализированнее будет выделение
 
+# Lesson 11 `Drawing`
+
+*Drawing with OpenCV*
+
+1) Drawing a line 
+
+    **cv2.line()**
+
+    `cv2.line(img, (100, 150), (300, 450), (0,255,0), 3)`
+    1й аргумент (100, 150) - Это координаты 
+    2й аргумент (300, 450) - same here
+    3й аргумент (0,255,0) - RGB цвет (будет зеленый)
+    4й аргумент 3 - Thickness of the line
+
+2) Drawing rectangle 
+
+    **cv2.rectangle()**
+
+    `cv2.rectangle(img, (100, 250), (350, 500), (0,255,0), 3)`
+    1й - upper left corner of rectangle
+    2й - bottom rigt corner
+    3й - color
+    4й - thickness
+
+3) Drawing a circle
